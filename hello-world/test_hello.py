@@ -4,7 +4,7 @@
 import os
 from subprocess import getstatusoutput, getoutput
 
-prg = './hello.py'
+prg = './hello-world/hello.py'
 
 
 # --------------------------------------------------
@@ -18,7 +18,7 @@ def test_exists():
 def test_runnable():
     """Runs using python3"""
 
-    out = getoutput(f'python3 {prg}')
+    out = getoutput(f'py {prg}')
     assert out.strip() == 'Hello, World!'
 
 
@@ -26,7 +26,7 @@ def test_runnable():
 def test_executable():
     """Says 'Hello, World!' by default"""
 
-    out = getoutput(prg)
+    out = getoutput(f'py {prg}')
     assert out.strip() == 'Hello, World!'
 
 
